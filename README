@@ -1,0 +1,11 @@
+This is a extentions to support a mailservice workload for rain.
+
+To use this extension, 
+You also need an functional mailservice with POP3 and SMTP support.
+
+To do mailservice benchmarks with this extension use the executable jar file, contained in this repository "rain_benchmark_mailworkload.jar".
+
+Adapt the configuration files of this extension located in "config/" to you needs.
+
+To run a benchmark: 
+java -Xmx1g -Xms512m -jar rain_benchmark_mailworkload.jar config/rain.config.mailapp.json

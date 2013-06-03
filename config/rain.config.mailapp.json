@@ -1,0 +1,8 @@
+{
+    "profiles": "config/profiles.config.mailapp.json",
+    "timing": {
+        "rampUp": 0,
+        "duration": 300,
+        "rampDown": 0
+    }
+}

@@ -1,0 +1,79 @@
+{
+	"mailapp-001": {
+		"generator": "radlab.rain.workload.mailapp.MailAppGenerator",
+		"generatorParameters":{
+        	"mailSizeDistribution": "lognormal",
+        	"logNormalMailSize_mean": 0.87,
+        	"logNormalMailSize_sigma": 0.739,
+        	"minMailSize":1000,
+        	"maxMailSize":63000,       	
+        	"mailCountDistribution": "uniform",
+        	"logNormalMailCount_mean": 2.135,
+        	"logNormalMailCount_sigma": 1.0,
+        	"minMailCount":0,
+        	"maxMailCount":5000,
+        	"userChooserDistribution": "uniform",
+        	"minUserKey":1,
+        	"maxUserKey":1000,     	
+        	"endpoint":"localhost",
+        	"retrieveCountDistribution": "ycsbZipfian",
+        	"deleteCountDistribution": "ycsbZipfian"
+        },
+        "track": "radlab.rain.DefaultScenarioTrack",
+        "resourcePath": "resources/",
+		"behavior": {		
+			"default" : [
+				[ 0.19, 	0.23,	0.01,	0.57],
+				[ 0.19, 	0.23,	0.01,	0.57],
+				[ 0.19, 	0.23,	0.01,	0.57],
+				[ 0.19, 	0.23,	0.01,	0.57]
+			],			
+			"load" : [
+				[ 0.95, 	0.0,	0.05,	0.0],
+				[ 0.95, 	0.0,	0.05,	0.0],
+				[ 0.95, 	0.0,	0.05,	0.0],
+				[ 0.95, 	0.0,	0.05,	0.0]
+			],			
+			"smtp" : [
+				[ 1.0, 	0.0,	0.00,	0.0],
+				[ 1.0, 	0.0,	0.00,	0.0],
+				[ 1.0, 	0.0,	0.00,	0.0],
+				[ 1.0, 	0.0,	0.00,	0.0]
+			],			
+			"popread" : [
+				[ 0.0, 	1.0,	0.0,	0.0],
+				[ 0.0, 	1.0,	0.0,	0.0],
+				[ 0.0, 	1.0,	0.0,	0.0],
+				[ 0.0, 	1.0,	0.0,	0.0]
+			],			
+			"popdelete" : [
+				[ 0.0, 	0.0,	1.0,	0.0],
+				[ 0.0, 	0.0,	1.0,	0.0],
+				[ 0.0, 	0.0,	1.0,	0.0],
+				[ 0.0, 	0.0,	1.0,	0.0]
+			],			
+			"popempty" : [
+				[ 0.0, 	0.0,	0.0,	1.0],
+				[ 0.0, 	0.0,	0.0,	1.0],
+				[ 0.0, 	0.0,	0.0,	1.0],
+				[ 0.0, 	0.0,	0.0,	1.0]
+			]
+		},		
+		"loadProfile": [
+		{
+			"interval": 300,
+			"users": 21,
+			"mix": "load"
+		}
+		],		
+		"target": {
+		  "hostname": "127.0.0.1",
+		  "port": 3000
+		},		
+		"pLogSampling": 0.0,
+		"pOpenLoop": 1.0,
+		"meanCycleTime": 7,
+		"meanThinkTime": 0.0,
+		"interactive": true
+	}
+}
